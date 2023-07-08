@@ -1,9 +1,9 @@
-const express = require('express')
+import express from 'express';
 const app = express()
 const port = 3000
 
 // Importa los enrutadores
-const userRouter = require('./src/routes/users/users');
+import userRouter from './src/routes/users/index'
 
 app.use('/users', userRouter)
 

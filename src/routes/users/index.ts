@@ -1,15 +1,13 @@
-const express = require('express');
-const { PrismaClient } = require('@prisma/client')
+import express from 'express'
+import { PrismaClient } from '@prisma/client'
 
 const router = express.Router();
 const prisma = new PrismaClient()
-
 
 // Ruta para obtener todos los usuarios
 router.get('/', async (req, res) => {
 
     const allUsers = await prisma.users.findMany()
-
     res.json(allUsers)
 });
 
@@ -20,4 +18,4 @@ router.get('/:id', (req, res) => {
 });
 
 // Exporta el enrutador
-module.exports = router;
+export default router
