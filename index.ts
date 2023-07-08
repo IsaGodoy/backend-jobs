@@ -5,7 +5,7 @@ const app = express()
 
 
 // Importa los enrutadores
-import userRouter from './src/routes/users/index'
+import userRouter from './src/routes/users'
 
 app.use('/users', userRouter)
 
